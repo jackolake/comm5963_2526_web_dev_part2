@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Currency Selection</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50 flex justify-center items-center min-h-screen">
+    <div class="max-w-md w-full bg-white shadow-xl rounded-2xl p-8 border border-gray-100">
+        <h1 class="text-3xl font-extrabold text-gray-900 mb-8 text-center">Cookies</h1>
+        
+        <div class="bg-blue-50 rounded-lg p-6 mb-8 text-center">
+            <span class="text-sm text-blue-600 font-semibold uppercase tracking-wider">Current Currency</span>
+            <div class="text-4xl font-bold text-blue-800 mt-2">{{ currency }}</div>
+        </div>
+
+        <div class="space-y-4">
+            <p class="text-gray-600 font-medium text-center mb-4">Set your preference:</p>
+            <div class="grid grid-cols-3 gap-3">
+                <a href="/?currency=CNY" class="flex justify-center items-center py-3 px-4 rounded-xl border-2 border-gray-100 hover:border-blue-500 hover:bg-blue-50 transition-all font-semibold text-gray-700 hover:text-blue-600">
+                    CNY
+                </a>
+                <a href="/?currency=HKD" class="flex justify-center items-center py-3 px-4 rounded-xl border-2 border-gray-100 hover:border-blue-500 hover:bg-blue-50 transition-all font-semibold text-gray-700 hover:text-blue-600">
+                    HKD
+                </a>
+                <a href="/?currency=USD" class="flex justify-center items-center py-3 px-4 rounded-xl border-2 border-gray-100 hover:border-blue-500 hover:bg-blue-50 transition-all font-semibold text-gray-700 hover:text-blue-600">
+                    USD
+                </a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
