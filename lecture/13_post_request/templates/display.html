@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post Request</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50 flex justify-center p-4">
+    <div class="max-w-xl w-full bg-white shadow-lg rounded-2xl p-8 border border-gray-100">
+        <h1 class="text-2xl font-bold text-gray-800 mb-6 uppercase">Show POST Request Parameters</h1>
+
+        {% if request.form %}
+            <div class="border rounded-xl overflow-hidden">
+                <table class="w-full text-left border-collapse">
+                    <thead class="bg-gray-50 border-b">
+                        <tr>
+                            <th class="px-4 py-2 text-xs font-bold text-gray-500 uppercase">Key</th>
+                            <th class="px-4 py-2 text-xs font-bold text-gray-500 uppercase">Value</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y">
+                        {% for key, value in request.form.items() %}
+                            <tr class="hover:bg-gray-50">
+                                <td class="px-4 py-3 font-mono text-sm text-blue-600">{{ key }}</td>
+                                <td class="px-4 py-3 text-sm text-gray-600">{{ value }}</td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        {% else %}
+            <div class="text-center py-6 text-gray-400">
+                <p>No parameters found</p>
+            </div>
+        {% endif %}
+        
+        <div class="mt-8 text-center">
+            <a href="/" class="text-sm text-blue-500 hover:underline">Reset</a>
+        </div>
+    </div>
+</body>
+</html>
