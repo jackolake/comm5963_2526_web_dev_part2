@@ -1,0 +1,12 @@
+{%  extends "layout.html" %}
+
+{%  block content %}
+    <h1 class="text-4xl font-extrabold mb-8 text-gray-900">Schools</h1>
+    <div class="flex">
+        {% for name, url in schools.items() %}
+            <a href="{{ url }}" class="flex-1 justify-center p-6 m-6 bg-blue-600 text-white rounded-xl shadow-lg">
+                <span class="text-2xl font-bold">{{ name }}</span>
+            </a>
+        {% endfor %}
+    </div>
+{%  endblock %}
