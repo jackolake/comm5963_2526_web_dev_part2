@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Red Panda Explorer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .bg-ocean-blue { background-color: #0077B6; }
+    </style>
+</head>
+<body class="bg-gray-50 min-h-screen font-sans">
+
+    <!-- Header -->
+    <header class="bg-ocean-blue text-white py-6 shadow-md mb-0">
+        <div class="container mx-auto px-4">
+            <div class="float-left">
+                <a href="/" class="bg-white p-1 rounded-full overflow-hidden w-12 h-12 block hover:opacity-90 transition-opacity float-left mr-4">
+                    <img src="/static/img/red_panda_icon.png" alt="Panda Logo" class="w-full h-full object-cover" />
+                </a>
+                <div class="overflow-hidden">
+                    <h1 class="text-2xl font-bold">Red Panda Explorer</h1>
+                    <p class="text-sm opacity-90">Discover the magic of Hong Kong's Red Pandas</p>
+                </div>
+            </div>
+            <div class="clear-both"></div>
+        </div>
+    </header>
+
+    <div class="bg-gray-100 border-b border-gray-200 text-center">
+        <div class="container mx-auto px-4 py-2">
+            <div class="bg-white shadow-sm p-1 rounded-lg inline-block border border-gray-200">
+                <a href="/" class="px-6 py-2 rounded-md font-medium transition-all {% if request.path == '/' or request.path == '/chat' or request.path == '/clear_history' %}bg-ocean-blue text-white{% else %}text-gray-600 hover:bg-gray-100{% endif %} text-sm inline-block">
+                    Chat with Expert
+                </a>
+                <a href="/vision_page" class="px-6 py-2 rounded-md font-medium transition-all {% if request.path == '/vision_page' or request.path == '/vision' %}bg-ocean-blue text-white{% else %}text-gray-600 hover:bg-gray-100{% endif %} text-sm inline-block">
+                    Recognize Image
+                </a>
+            </div>
+        </div>
+    </div>
+
+    {% block content %}{% endblock %}
+
+    <footer class="bg-white border-t border-gray-200 py-4 text-center text-gray-500 text-xs">
+        <p>&copy; COMM5963 2025-2026 Practice 10</p>
+    </footer>
+
+</body>
+</html>
