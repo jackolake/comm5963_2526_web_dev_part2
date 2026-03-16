@@ -1,7 +1,7 @@
 from openai import OpenAI, DefaultHttpxClient
 
 # TODO: Set your API Key here
-API_KEY = 'sk-tyU5jvNCGNgV5v9MwHYVTwYzGUmMoHsKEXjZKJjBbJQXpo'
+API_KEY = 'your api key here'
 
 
 def text_chat(messages):
